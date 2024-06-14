@@ -1,0 +1,124 @@
+{
+    "products": [
+        {
+            "name": "Abacaxi premium",
+            "price": 29.99,
+            "image": "assets/images/image_1.png",
+            "category": "Cítricas"
+        },
+        {
+            "name": "Manga premium",
+            "price": 39.99,
+            "image": "assets/images/image_2.png",
+            "category": "Doces"
+        },
+        {
+            "name": "Laranja premium",
+            "price": 19.99,
+            "image": "assets/images/image_3.png",
+            "category": "Cítricas"
+        },
+        {
+            "name": "Morango premium",
+            "price": 49.99,
+            "image": "assets/images/image_4.png",
+            "category": "Doces"
+        },
+        {
+            "name": "Banana premium",
+            "price": 24.99,
+            "image": "assets/images/image_5.png",
+            "category": "Tropicais"
+        },
+        {
+            "name": "Limão premium",
+            "price": 34.99,
+            "image": "assets/images/image_6.png",
+            "category": "Cítricas"
+        },
+        {
+            "name": "Uva premium",
+            "price": 44.99,
+            "image": "assets/images/image_7.png",
+            "category": "Doces"
+        },
+        {
+            "name": "Melancia premium",
+            "price": 14.99,
+            "image": "assets/images/image_8.png",
+            "category": "Tropicais"
+        },
+        {
+            "name": "Kiwi premium",
+            "price": 54.99,
+            "image": "assets/images/image_9.png",
+            "category": "Exóticas"
+        },
+        {
+            "name": "Maçã premium",
+            "price": 19.99,
+            "image": "assets/images/image_10.png",
+            "category": "Doces"
+        },
+        {
+            "name": "Pera premium",
+            "price": 29.99,
+            "image": "assets/images/image_11.png",
+            "category": "Doces"
+        },
+        {
+            "name": "Mamão premium",
+            "price": 39.99,
+            "image": "assets/images/image_12.png",
+            "category": "Tropicais"
+        },
+        {
+            "name": "Coco premium",
+            "price": 19.99,
+            "image": "assets/images/image_13.png",
+            "category": "Tropicais"
+        },
+        {
+            "name": "Acerola premium",
+            "price": 49.99,
+            "image": "assets/images/image_14.png",
+            "category": "Cítricas"
+        },
+        {
+            "name": "Framboesa premium",
+            "price": 24.99,
+            "image": "assets/images/image_15.png",
+            "category": "Doces"
+        },
+        {
+            "name": "Pitaya premium",
+            "price": 34.99,
+            "image": "assets/images/image_16.png",
+            "category": "Exóticas"
+        },
+        {
+            "name": "Maracujá premium",
+            "price": 44.99,
+            "image": "assets/images/image_17.png",
+            "category": "Cítricas"
+        },
+        {
+            "name": "Jabuticaba premium",
+            "price": 14.99,
+            "image": "assets/images/image_18.png",
+            "category": "Exóticas"
+        },
+        {
+            "name": "Goiaba premium",
+            "price": 54.99,
+            "image": "assets/images/image_19.png",
+            "category": "Tropicais"
+        },
+        {
+            "name": "Caju premium",
+            "price": 19.99,
+            "image": "assets/images/image_20.png",
+            "category": "Cítricas"
+        }
+    ]
+}

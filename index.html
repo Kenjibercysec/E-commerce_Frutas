@@ -1,1 +1,92 @@
-Hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Product List</h1>
+        <div class="filter">
+            <button onclick="filterProducts('all')">All</button>
+            <button onclick="filterProducts('Slytherine')">Slytherine</button>
+            <button onclick="sortProductsByName()">Sort by Name (A-Z)</button>
+            <button onclick="sortProductsByPrice()">Sort by Price (High to Low)</button>
+        </div>
+        <div class="pagination-control">
+            <label for="productsPerPage">Products per page:</label>
+            <select id="productsPerPage" onchange="updateProductsPerPage()">
+                <option value="16">16</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+            </select>
+        </div>
+    </header>
+    <div class="container">
+        <div class="product-list" id="product-list">
+            <!-- Produtos serão carregados aqui -->
+        </div>
+        <div class="pagination" id="pagination">
+            <!-- Botões de paginação serão gerados aqui -->
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-feature">
+                <img src="assets/images/high_quality_icon.png" alt="High Quality Icon">
+                <p>High Quality</p>
+                <span>crafted from top materials</span>
+            </div>
+            <div class="footer-feature">
+                <img src="assets/images/warranty_protection_icon.png" alt="Warranty Protection Icon">
+                <p>Warranty Protection</p>
+                <span>Over 2 years</span>
+            </div>
+            <div class="footer-feature">
+                <img src="assets/images/free_shipping_icon.png" alt="Free Shipping Icon">
+                <p>Free Shipping</p>
+                <span>Order over 150 $</span>
+            </div>
+            <div class="footer-feature">
+                <img src="assets/images/support_icon.png" alt="24/7 Support Icon">
+                <p>24 / 7 Support</p>
+                <span>Dedicated support</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-info">
+                <p>R. Vinte e Dois - Xique-Xique, BA, 47400-000</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <p>Links</p>
+                    <a href="#" target="_blank">Home</a>
+                    <a href="https://www.amazon.com.br" target="_blank">Shop</a>
+                    <a href="https://github.com/Kenjibercysec/resultList_compass" target="_blank">About</a>
+                    <a href="https://github.com/Kenjibercysec" target="_blank">Contact</a>
+                </div>
+                <div>
+                    <p>Help</p>
+                    <a href="#" target="_blank">Payment Options</a>
+                    <a href="https://trollface.dk" target="_blank">Returns</a>
+                    <a href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/politica-de-privacidade" target="_blank">Privacy policy</a>
+                </div>
+                <div>
+                    <p>Newsletter</p>
+                    <form id="newsletter-form" onsubmit="validateEmail(event)">
+                        <input type="email" id="email" placeholder="Enter Your Email Address">
+                        <button type="submit">Subscribe</button>
+                        <span id="error-message" class="error-message" style="display: none;">Please enter a valid email address.</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>2024 Compass UOL</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
