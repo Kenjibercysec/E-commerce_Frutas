@@ -70,7 +70,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-function filterProducts(category) {
+
+function setActiveButton(clickedButton) {
+    const buttons = document.querySelectorAll('.filter button, .dropdown-content a');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+    clickedButton.classList.add('active');
+}
+
+
+function filterProducts(category, button) {
     if (category === 'all') {
         filteredProducts = products;
     } else {
@@ -79,17 +89,22 @@ function filterProducts(category) {
     currentPage = 1;
     createPagination();
     displayProducts();
+    setActiveButton(button); 
 }
 
-function sortProductsByName() {
+
+function sortProductsByName(button) {
     filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
     displayProducts(currentPage);
+    setActiveButton(button); 
 }
 
-function sortProductsByPrice() {
+function sortProductsByPrice(button) {
     filteredProducts.sort((a, b) => b.price - a.price);
     displayProducts(currentPage);
+    setActiveButton(button); 
 }
+
 
 function updateProductsPerPage() {
     const select = document.getElementById('productsPerPage');

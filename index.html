@@ -11,19 +11,20 @@
         <h1>Product List</h1>
         <div class="divider"></div>
         <div class="filter">
-            <button onclick="filterProducts('all')">All</button>
+            <button data-category="all" onclick="filterProducts('all', this)">All</button>
             <div class="dropdown">
                 <button class="dropbtn">Categorias</button>
                 <div class="dropdown-content">
-                  <a href="#" class="category" data-category="Doces">Doces</a>
-                  <a href="#" class="category" data-category="Cítricas">Cítricas</a>
-                  <a href="#" class="category" data-category="Exóticas">Exóticas</a>
-                  <a href="#" class="category" data-category="Tropicais">Tropicais</a>
+                    <a href="#" class="category" data-category="Doces" onclick="filterProducts('Doces', this)">Doces</a>
+                    <a href="#" class="category" data-category="Cítricas" onclick="filterProducts('Cítricas', this)">Cítricas</a>
+                    <a href="#" class="category" data-category="Exóticas" onclick="filterProducts('Exóticas', this)">Exóticas</a>
+                    <a href="#" class="category" data-category="Tropicais" onclick="filterProducts('Tropicais', this)">Tropicais</a>
                 </div>
-              </div>
-            <button onclick="sortProductsByName()">Sort by Name (A-Z)</button>
-            <button onclick="sortProductsByPrice()">Sort by Price (High to Low)</button>
+            </div>
+            <button data-category="name" class="sort" onclick="sortProductsByName(this)">Sort by Name (A-Z)</button>
+            <button data-category="price" class="sort" onclick="sortProductsByPrice(this)">Sort by Price (High to Low)</button>
         </div>
+        
         <div class="pagination-control">
             <label id="filterProductsPP" for="productsPerPage">Products per page:</label>
             <select id="productsPerPage" onchange="updateProductsPerPage()">
