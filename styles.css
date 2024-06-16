@@ -2,8 +2,8 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #0d1117;
-  color: #c9d1d9;
+  background-color: #FFFF;
+  color: #000;
 }
 
 .container {
@@ -18,7 +18,7 @@ header {
 }
 
 header h1 {
-  color: #58a6ff;
+  color: #0d1117;
   font-size: 3em;
 }
 
@@ -31,15 +31,15 @@ header h1 {
   margin: 0 10px;
   padding: 10px 20px;
   cursor: pointer;
-  background-color: #21262d;
-  color: #c9d1d9;
-  border: 2px solid #58a6ff;
-  border-radius: 10px;
+  background-color: #FFFF;
+  color: #000;
+  border: none;
+  
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .filter button:hover, .pagination-control select:hover {
-  background-color: #58a6ff;
+  background-color: #B88E2F;
   color: #0d1117;
 }
 
@@ -51,8 +51,8 @@ header h1 {
 }
 
 .product-card {
-  background-color: #161b22;
-  border: 2px solid #58a6ff;
+  background-color: #FAF3EA;
+  border: 2px solid #FD495C;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
@@ -70,7 +70,7 @@ header h1 {
 .product-card img {
   max-width: 100%;
   height: auto;
-  border-bottom: 1px solid #58a6ff;
+  border-bottom: 1px solid #000;
   margin-bottom: 10px;
 }
 
@@ -81,7 +81,7 @@ header h1 {
 
 .product-card p {
   font-size: 1em;
-  color: #58a6ff;
+  color: #000;
 }
 
 .pagination {
@@ -95,31 +95,31 @@ header h1 {
   cursor: pointer;
   background-color: #21262d;
   color: #c9d1d9;
-  border: 2px solid #58a6ff;
+  border: none;
   border-radius: 5px;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .pagination button:hover {
-  background-color: #58a6ff;
+  background-color: #FAF3EA;
   color: #0d1117;
 }
 
 .pagination button.active {
-  background-color: #58a6ff;
+  background-color: #FAF3EA;
   color: #0d1117;
 }
 
 footer {
-  background-color: #161b22;
-  color: #c9d1d9;
+  background-color: #FAF3EA;
+  color: #000;
   padding: 20px 0;
 }
 
 .footer-top {
   display: flex;
   justify-content: space-around;
-  border-bottom: 1px solid #58a6ff;
+  border-bottom: 1px solid #0d1117;
   padding-bottom: 20px;
 }
 
@@ -161,7 +161,7 @@ footer {
 }
 
 .footer-links a {
-  color: #58a6ff;
+  color: #FD495C;
   display: block;
   margin: 5px 0;
   text-decoration: none;
@@ -173,7 +173,7 @@ footer {
 
 .footer-copy {
   text-align: center;
-  border-top: 1px solid #58a6ff;
+  border-top: 1px solid #0d1117;
   padding-top: 10px;
 }
 
