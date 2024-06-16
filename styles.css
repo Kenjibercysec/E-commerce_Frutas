@@ -15,11 +15,45 @@ body {
 header {
   text-align: center;
   margin-bottom: 20px;
+  background-image: url('assets/icons/fundo_frutas.png'); 
+  background-size: cover; 
+  background-position: center; 
+  padding: 20px;
+  border-radius: none;
+  color: white; 
 }
 
+/* Estilização do título */
 header h1 {
-  color: #0d1117;
   font-size: 3em;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  color: #fff;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000; 
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.divider {
+  height: 2px;
+  background-color: none; 
+  margin: 20px 0; 
+}
+
+/* Estilização específica para .pagination-control */
+.pagination-control {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pagination-control label {
+  margin-right: 10px;
+  font-size: 1em;
+  color: #000;
+  padding: 9px 10px;
+  background-color: #fff;
+  border: none;
 }
 
 .filter, .pagination-control {
@@ -34,22 +68,78 @@ header h1 {
   background-color: #FFFF;
   color: #000;
   border: none;
-  
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .filter button:hover, .pagination-control select:hover {
-  background-color: #B88E2F;
+  background-color: #b5b5b5;
   color: #0d1117;
 }
 
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Definir três colunas fixas */
-  gap: 20px;
-  justify-items: center; /* Centralizar os itens dentro do grid */
+/* botão dropdown*/
+.dropbtn {
+  background-color: #b5b5b5;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
+/* Container do dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; 
+}
+
+/* Conteúdo do dropdown (links) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); 
+  background-color: #f9f9f9;
+  min-width: 116px; 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Mudar cor do link ao passar o mouse */
+.dropdown-content a:hover {
+  background-color: #b5b5b5;
+}
+
+/* Mostrar o dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Mudar cor do botão ao passar o mouse */
+.dropdown:hover .dropbtn {
+  background-color: #b5b5b5;
+}
+
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Definir número de colunas fixas */
+  gap: 20px;
+  justify-items: center; 
+}
+.product-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  text-align: center;
+}
 .product-card {
   background-color: #FAF3EA;
   border: 2px solid #FD495C;
@@ -57,15 +147,16 @@ header h1 {
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s;
-  width: calc(100% - 40px); /* Ajustar a largura dos cards */
-  max-width: 300px; /* Limitar a largura máxima */
+  width: calc(100% - 40px); 
+  max-width: 300px; 
   padding: 10px;
-  box-sizing: border-box; /* Inclui padding e border na largura total */
+  box-sizing: border-box; 
 }
 
 .product-card:hover {
   transform: scale(1.05);
 }
+
 
 .product-card img {
   max-width: 100%;
@@ -96,7 +187,7 @@ header h1 {
   background-color: #21262d;
   color: #c9d1d9;
   border: none;
-  border-radius: 5px;
+  border-radius: none;
   transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -109,6 +200,7 @@ header h1 {
   background-color: #FAF3EA;
   color: #0d1117;
 }
+
 
 footer {
   background-color: #FAF3EA;
@@ -186,35 +278,35 @@ footer {
 /* Responsividade */
 @media (max-width: 992px) {
   .product-list {
-      grid-template-columns: repeat(2, 1fr); /* Ajustado para 2 colunas em telas médias */
+    grid-template-columns: repeat(2, 1fr); /* Ajustado para 2 colunas em telas médias */
   }
 
   .footer-top {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 
   .footer-feature {
-      max-width: 100%;
-      margin-bottom: 20px;
+    max-width: 100%;
+    margin-bottom: 20px;
   }
 
   .footer-bottom {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-info, .footer-links {
-      flex-basis: 100%;
-      padding: 0;
+    flex-basis: 100%;
+    padding: 0;
   }
 
   .footer-links {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-links div {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
 
@@ -224,9 +316,8 @@ footer {
   display: block;
 }
 
-
 @media (max-width: 600px) {
   .product-list {
-      grid-template-columns: 1fr; /* Ajustado para 1 coluna em telas pequenas(tentativa de responsividade 1) */
+    grid-template-columns: 1fr; /* Ajustado para 1 coluna em telas pequenas(tentativa de responsividade 1) */
   }
 }

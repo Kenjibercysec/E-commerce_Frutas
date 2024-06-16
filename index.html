@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
+    <title>Result List</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Product List</h1>
+        <div class="divider"></div>
         <div class="filter">
             <button onclick="filterProducts('all')">All</button>
-            <button onclick="filterProducts('Doces')">Doces</button>
+            <div class="dropdown">
+                <button class="dropbtn">Categorias</button>
+                <div class="dropdown-content">
+                  <a href="#" class="category" data-category="Doces">Doces</a>
+                  <a href="#" class="category" data-category="Cítricas">Cítricas</a>
+                  <a href="#" class="category" data-category="Exóticas">Exóticas</a>
+                  <a href="#" class="category" data-category="Tropicais">Tropicais</a>
+                </div>
+              </div>
             <button onclick="sortProductsByName()">Sort by Name (A-Z)</button>
             <button onclick="sortProductsByPrice()">Sort by Price (High to Low)</button>
         </div>
         <div class="pagination-control">
-            <label for="productsPerPage">Products per page:</label>
+            <label id="filterProductsPP" for="productsPerPage">Products per page:</label>
             <select id="productsPerPage" onchange="updateProductsPerPage()">
                 <option value="8">8</option>
                 <option value="16">16</option>
@@ -26,12 +35,12 @@
     </header>
     <div class="container">
         <div class="product-list" id="product-list">
-            <!-- Produtos serão carregados aqui -->
         </div>
+        <div class="divider"></div>
         <div class="pagination" id="pagination">
-            <!-- Botões de paginação serão gerados aqui -->
         </div>
     </div>
+    <div class="divider"></div>
     <footer class="footer">
         <div class="footer-top">
             <div class="footer-feature">

@@ -48,6 +48,28 @@ function createPagination() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    function filterProducts(category) {
+        if (category === 'all') {
+            filteredProducts = products;
+        } else {
+            filteredProducts = products.filter(product => product.category === category);
+        }
+        currentPage = 1;
+        createPagination();
+        displayProducts();
+    }
+  
+    const categoryLinks = document.querySelectorAll('.category');
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const category = e.target.getAttribute('data-category');
+            filterProducts(category);
+        });
+    });
+});
+
 function filterProducts(category) {
     if (category === 'all') {
         filteredProducts = products;
@@ -90,6 +112,7 @@ function validateEmail(event) {
         emailError.textContent = 'Please enter a valid email address.';
     }
 }
+
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('newsletter-form').addEventListener('submit', validateEmail);
 });
@@ -100,7 +123,6 @@ function validateEmail(event) {
     const email = emailInput.value;
     const errorMessage = document.getElementById('error-message');
 
-    // Expressão regular para validar o email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
@@ -108,14 +130,22 @@ function validateEmail(event) {
         emailInput.focus();
     } else {
         errorMessage.style.display = 'none';
-        alert('Subscription successful!'); // substituir isso pelo código de inscrição real caso necessario
-        // document.getElementById('newsletter-form').submit(); // Submete o formulário se a validação for bem-sucedida
+        alert('Subscription successful!');
     }
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+    const categoryLinks = document.querySelectorAll('.category');
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const category = e.target.getAttribute('data-category');
+            filterProducts(category);
+        });
+    });
+});
 
 
-// Adicionar funcionalidades interativas no footer
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.footer-feature').forEach(feature => {
         feature.addEventListener('click', () => {
@@ -131,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('resource2').addEventListener('click', (event) => {
         event.preventDefault();
         alert('Resource 2 functionality');
-
     });
 
     document.getElementById('resource3').addEventListener('click', (event) => {
