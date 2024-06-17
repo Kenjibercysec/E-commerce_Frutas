@@ -128,6 +128,7 @@ function validateEmail(event) {
     }
 }
 
+
 document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('newsletter-form').addEventListener('submit', validateEmail);
 });
