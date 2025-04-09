@@ -10,6 +10,7 @@ fetch('products.json')
         filteredProducts = products;
         createPagination();
         displayProducts();
+        cart.updateCartUI(); // Initialize cart count
     });
 
 function displayProducts(page = 1) {
@@ -26,9 +27,26 @@ function displayProducts(page = 1) {
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>$${product.price.toFixed(2)}</p>
+            <button onclick="addToCart(${JSON.stringify(product).replace(/"/g, '&quot;')})" class="add-to-cart">Add to Cart</button>
         `;
         productContainer.appendChild(productCard);
     });
+}
+
+function addToCart(product) {
+    cart.addItem(product);
+    showNotification(`${product.name} added to cart!`);
+}
+
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
 }
 
 function createPagination() {
@@ -68,8 +86,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
             filterProducts(category);
         });
     });
-});
 
+    // Setup cart link
+    const cartLink = document.querySelector('.cart-link');
+    cartLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (cart.items.length > 0) {
+            window.location.href = 'checkout.html';
+        } else {
+            showNotification('Your cart is empty!');
+        }
+    });
+});
 
 function setActiveButton(clickedButton) {
     const buttons = document.querySelectorAll('.filter button, .dropdown-content a');
@@ -78,7 +106,6 @@ function setActiveButton(clickedButton) {
     });
     clickedButton.classList.add('active');
 }
-
 
 function filterProducts(category, button) {
     if (category === 'all') {
@@ -92,7 +119,6 @@ function filterProducts(category, button) {
     setActiveButton(button); 
 }
 
-
 function sortProductsByName(button) {
     filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
     displayProducts(currentPage);
@@ -105,7 +131,6 @@ function sortProductsByPrice(button) {
     setActiveButton(button); 
 }
 
-
 function updateProductsPerPage() {
     const select = document.getElementById('productsPerPage');
     productsPerPage = parseInt(select.value);
@@ -113,25 +138,6 @@ function updateProductsPerPage() {
     createPagination();
     displayProducts();
 }
-
-function validateEmail(event) {
-    event.preventDefault();
-    const emailInput = document.getElementById('email');
-    const emailError = document.getElementById('emailError');
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (emailPattern.test(emailInput.value)) {
-        emailError.textContent = '';
-        alert('Thank you for subscribing!');
-    } else {
-        emailError.textContent = 'Please enter a valid email address.';
-    }
-}
-
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('newsletter-form').addEventListener('submit', validateEmail);
-});
 
 function validateEmail(event) {
     event.preventDefault();
@@ -151,16 +157,8 @@ function validateEmail(event) {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const categoryLinks = document.querySelectorAll('.category');
-    categoryLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const category = e.target.getAttribute('data-category');
-            filterProducts(category);
-        });
-    });
+    document.getElementById('newsletter-form').addEventListener('submit', validateEmail);
 });
-
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.footer-feature').forEach(feature => {

@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result List</title>
+    <title>Fruit Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Result List</h1>
+        <nav class="main-nav">
+            <div class="nav-left">
+                <a href="index.html" class="logo">Fruit Store</a>
+            </div>
+            <div class="nav-right">
+                <a href="index.html">Home</a>
+                <a href="#" class="cart-link">
+                    Cart (<span id="cart-count">0</span>)
+                </a>
+            </div>
+        </nav>
+        <h1>Our Products</h1>
         <div class="divider"></div>
         <div class="filter">
             <button data-category="all" onclick="filterProducts('all', this)">All</button>
             <div class="dropdown">
-                <button class="dropbtn">Categorias</button>
+                <button class="dropbtn">Categories</button>
                 <div class="dropdown-content">
-                    <a href="#" class="category" data-category="Doces" onclick="filterProducts('Doces', this)">Doces</a>
-                    <a href="#" class="category" data-category="Cítricas" onclick="filterProducts('Cítricas', this)">Cítricas</a>
-                    <a href="#" class="category" data-category="Exóticas" onclick="filterProducts('Exóticas', this)">Exóticas</a>
-                    <a href="#" class="category" data-category="Tropicais" onclick="filterProducts('Tropicais', this)">Tropicais</a>
+                    <a href="#" class="category" data-category="Doces" onclick="filterProducts('Doces', this)">Sweet</a>
+                    <a href="#" class="category" data-category="Cítricas" onclick="filterProducts('Cítricas', this)">Citrus</a>
+                    <a href="#" class="category" data-category="Exóticas" onclick="filterProducts('Exóticas', this)">Exotic</a>
+                    <a href="#" class="category" data-category="Tropicais" onclick="filterProducts('Tropicais', this)">Tropical</a>
                 </div>
             </div>
             <button data-category="name" class="sort" onclick="sortProductsByName(this)">Sort by Name (A-Z)</button>
@@ -67,14 +78,14 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-info">
-                <p><strong>Endereço</strong></p>
-                    <p>R. Vinte e Dois - Xique-Xique, BA, 47400-000</p>
+                <p><strong>Address</strong></p>
+                <p>R. Vinte e Dois - Xique-Xique, BA, 47400-000</p>
             </div>
             <div class="footer-links">
                 <div>
                     <p>Links</p>
-                    <a href="https://Kenjibercysec.github.io">Home</a>
-                    <a href="https://Kenjibercysec.github.io">Shop</a>
+                    <a href="index.html">Home</a>
+                    <a href="index.html">Shop</a>
                     <a href="https://github.com/Kenjibercysec/Kenjibercysec.github.io" target="_blank">About</a>
                     <a href="https://github.com/Kenjibercysec" target="_blank">Contact</a>
                 </div>
@@ -98,6 +109,7 @@
             <p>2024 Compass UOL</p>
         </div>
     </footer>
+    <script src="cart.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
