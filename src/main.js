@@ -6,6 +6,13 @@ import 'animate.css'
 import './styles/main.css'
 
 const app = createApp(App)
-app.use(createPinia())
+
+// Initialize Pinia
+const pinia = createPinia()
+app.use(pinia)
+
+// Initialize Router
 app.use(router)
+
+// Mount the app
 app.mount('#app') 

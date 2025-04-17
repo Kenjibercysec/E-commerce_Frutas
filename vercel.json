@@ -11,6 +11,9 @@
   ],
   "routes": [
     {
+      "handle": "files"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
