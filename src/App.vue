@@ -1,22 +1,7 @@
 <template>
   <div class="min-h-screen bg-gradient-to-b from-green-50 to-white">
-    <nav class="fixed w-full bg-white shadow-lg z-50 transition-all duration-300">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex justify-between items-center">
-          <router-link to="/" class="text-2xl font-bold text-green-600 hover:text-green-700 transition-colors">
-            Fruit Store
-          </router-link>
-          <div class="flex items-center space-x-6">
-            <router-link to="/" class="nav-link">Home</router-link>
-            <router-link to="/cart" class="nav-link relative">
-              <i class="fas fa-shopping-cart"></i>
-              <span class="cart-badge">{{ cartCount }}</span>
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </nav>
-
+    <Navbar />
+    
     <main class="pt-20">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
@@ -42,6 +27,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useCartStore } from '@/stores/cart'
+import Navbar from '@/components/Navbar.vue'
 
 const cartStore = useCartStore()
 const cartCount = computed(() => cartStore.totalItems)
@@ -71,14 +57,6 @@ const features = [
 </script>
 
 <style scoped>
-.nav-link {
-  @apply text-gray-600 hover:text-green-600 transition-colors;
-}
-
-.cart-badge {
-  @apply absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease;
