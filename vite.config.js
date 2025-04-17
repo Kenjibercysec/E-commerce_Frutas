@@ -13,20 +13,11 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
-    sourcemap: false,
-    minify: 'terser',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'vendor': ['vue', 'vue-router', 'pinia']
-        },
-        assetFileNames: 'assets/[name].[ext]'
-      }
-    }
+    sourcemap: true
   },
   server: {
     port: 3000,
     open: true
   },
-  base: './'
+  base: '/'
 }) 
