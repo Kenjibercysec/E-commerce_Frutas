@@ -19,12 +19,14 @@ export default defineConfig({
       output: {
         manualChunks: {
           'vendor': ['vue', 'vue-router', 'pinia']
-        }
+        },
+        assetFileNames: 'assets/[name].[ext]'
       }
     }
   },
   server: {
     port: 3000,
     open: true
-  }
+  },
+  base: './'
 }) 
