@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "description": "Fresh and crispy red apple",
+    "price": 1.99,
+    "category": "Sweet",
+    "image": "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 2,
+    "name": "Orange",
+    "description": "Juicy and sweet orange",
+    "price": 2.49,
+    "category": "Citrus",
+    "image": "https://images.unsplash.com/photo-1587735243615-c03f25aaff15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 3,
+    "name": "Banana",
+    "description": "Ripe and sweet banana",
+    "price": 0.99,
+    "category": "Tropical",
+    "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 4,
+    "name": "Mango",
+    "description": "Sweet and juicy mango",
+    "price": 3.99,
+    "category": "Tropical",
+    "image": "https://images.pexels.com/photos/2294471/pexels-photo-2294471.jpeg?auto=compress&cs=tinysrgb&w=500"
+  },
+  {
+    "id": 5,
+    "name": "Pineapple",
+    "description": "Fresh and sweet pineapple",
+    "price": 4.99,
+    "category": "Tropical",
+    "image": "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 6,
+    "name": "Grapes",
+    "description": "Sweet and seedless grapes",
+    "price": 3.49,
+    "category": "Sweet",
+    "image": "https://images.unsplash.com/photo-1518843875459-f738682238a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 7,
+    "name": "Lemon",
+    "description": "Fresh and sour lemon",
+    "price": 1.49,
+    "category": "Citrus",
+    "image": "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+    "id": 8,
+    "name": "Dragon Fruit",
+    "description": "Exotic and sweet dragon fruit",
+    "price": 5.99,
+    "category": "Exotic",
+    "image": "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+  }
+] 

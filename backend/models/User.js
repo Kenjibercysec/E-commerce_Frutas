@@ -3,6 +3,16 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
+    firstName: {
+        type: String,
+        required: true,
+        trim: true
+    },
+    lastName: {
+        type: String,
+        required: true,
+        trim: true
+    },
     email: {
         type: String,
         required: true,
@@ -15,16 +25,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6
     },
-    name: {
-        type: String,
-        required: true,
-        trim: true
-    },
     address: {
         street: String,
         city: String,
         state: String,
-        zipCode: String
+        postalCode: String,
+        country: String
     },
     orders: [{
         type: mongoose.Schema.Types.ObjectId,
@@ -38,10 +44,15 @@ const userSchema = new mongoose.Schema({
 
 // Hash password before saving
 userSchema.pre('save', async function(next) {
-    if (this.isModified('password')) {
-        this.password = await bcrypt.hash(this.password, 10);
+    if (!this.isModified('password')) return next();
+    
+    try {
+        const salt = await bcrypt.genSalt(10);
+        this.password = await bcrypt.hash(this.password, salt);
+        next();
+    } catch (error) {
+        next(error);
     }
-    next();
 });
 
 // Generate JWT token
@@ -53,9 +64,9 @@ userSchema.methods.generateAuthToken = function() {
     );
 };
 
-// Compare password
+// Method to compare passwords
 userSchema.methods.comparePassword = async function(candidatePassword) {
-    return await bcrypt.compare(candidatePassword, this.password);
+    return bcrypt.compare(candidatePassword, this.password);
 };
 
 const User = mongoose.model('User', userSchema);

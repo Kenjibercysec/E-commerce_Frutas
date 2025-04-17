@@ -2,114 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruit Store</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fruit Store - Fresh Fruits E-commerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="main-nav">
-            <div class="nav-left">
-                <a href="index.html" class="logo">Fruit Store</a>
-            </div>
-            <div class="nav-right">
-                <a href="index.html">Home</a>
-                <a href="#" class="cart-link">
-                    Cart (<span id="cart-count">0</span>)
-                </a>
-            </div>
-        </nav>
-        <h1>Our Products</h1>
-        <div class="divider"></div>
-        <div class="filter">
-            <button data-category="all" onclick="filterProducts('all', this)">All</button>
-            <div class="dropdown">
-                <button class="dropbtn">Categories</button>
-                <div class="dropdown-content">
-                    <a href="#" class="category" data-category="Doces" onclick="filterProducts('Doces', this)">Sweet</a>
-                    <a href="#" class="category" data-category="Cítricas" onclick="filterProducts('Cítricas', this)">Citrus</a>
-                    <a href="#" class="category" data-category="Exóticas" onclick="filterProducts('Exóticas', this)">Exotic</a>
-                    <a href="#" class="category" data-category="Tropicais" onclick="filterProducts('Tropicais', this)">Tropical</a>
-                </div>
-            </div>
-            <button data-category="name" class="sort" onclick="sortProductsByName(this)">Sort by Name (A-Z)</button>
-            <button data-category="price" class="sort" onclick="sortProductsByPrice(this)">Sort by Price (High to Low)</button>
-        </div>
-        
-        <div class="pagination-control">
-            <label id="filterProductsPP" for="productsPerPage">Products per page:</label>
-            <select id="productsPerPage" onchange="updateProductsPerPage()">
-                <option value="8">8</option>
-                <option value="16">16</option>
-                <option value="32">32</option>
-            </select>
-        </div>
-    </header>
-    <div class="container">
-        <div class="product-list" id="product-list">
-        </div>
-        <div class="divider"></div>
-        <div class="pagination" id="pagination">
-        </div>
-    </div>
-    <div class="divider"></div>
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="footer-feature">
-                <img src="assets/icons/icon_quality.png" alt="High Quality Icon">
-                <p>High Quality</p>
-                <span>crafted from top materials</span>
-            </div>
-            <div class="footer-feature">
-                <img src="assets/icons/icon_garantia.png" alt="Warranty Protection Icon">
-                <p>Warranty Protection</p>
-                <span>Over 2 years</span>
-            </div>
-            <div class="footer-feature">
-                <img src="assets/icons/icon_freeS.png" alt="Free Shipping Icon">
-                <p>Free Shipping</p>
-                <span>Order over 150 $</span>
-            </div>
-            <div class="footer-feature">
-                <img src="assets/icons/icon_support.png" alt="24/7 Support Icon">
-                <p>24 / 7 Support</p>
-                <span>Dedicated support</span>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-info">
-                <p><strong>Address</strong></p>
-                <p>R. Vinte e Dois - Xique-Xique, BA, 47400-000</p>
-            </div>
-            <div class="footer-links">
-                <div>
-                    <p>Links</p>
-                    <a href="index.html">Home</a>
-                    <a href="index.html">Shop</a>
-                    <a href="https://github.com/Kenjibercysec/Kenjibercysec.github.io" target="_blank">About</a>
-                    <a href="https://github.com/Kenjibercysec" target="_blank">Contact</a>
-                </div>
-                <div>
-                    <p>Help</p>
-                    <a href="#" target="_blank">Payment Options</a>
-                    <a href="https://trollface.dk" target="_blank">Returns</a>
-                    <a href="https://www.gov.br/mdh/pt-br/acesso-a-informacao/politica-de-privacidade" target="_blank">Privacy policy</a>
-                </div>
-                <div>
-                    <p>Newsletter</p>
-                    <form id="newsletter-form" onsubmit="validateEmail(event)">
-                        <input type="email" id="email" placeholder="Enter Your Email Address">
-                        <button type="submit">Subscribe</button>
-                        <span id="error-message" class="error-message" style="display: none;">Please enter a valid email address.</span>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copy">
-            <p>2024 Compass UOL</p>
-        </div>
-    </footer>
-    <script src="cart.js"></script>
-    <script src="scripts.js"></script>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>

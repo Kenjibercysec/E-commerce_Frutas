@@ -1,6 +1,72 @@
 # Fruit Store E-commerce
 
-Um e-commerce moderno e responsivo especializado em frutas, desenvolvido com React, Node.js e MongoDB.
+A modern and beautiful e-commerce platform for fresh fruits, built with Vue 3, Tailwind CSS, and GSAP animations.
+
+## Features
+
+- 🎨 Modern and responsive design
+- ✨ Smooth animations and transitions
+- 🛒 Shopping cart functionality
+- 🔍 Product filtering and sorting
+- 📱 Mobile-first approach
+- 🚀 Fast and optimized performance
+
+## Tech Stack
+
+- Vue 3
+- Vue Router
+- Pinia (State Management)
+- Tailwind CSS
+- GSAP (Animations)
+- Animate.css
+- Font Awesome
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/fruit-store.git
+cd fruit-store
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Build for production:
+```bash
+npm run build
+```
+
+## Project Structure
+
+```
+src/
+├── assets/         # Images, icons, and fonts
+├── components/     # Reusable Vue components
+├── stores/         # Pinia stores
+├── styles/         # Global styles
+├── views/          # Page components
+└── utils/          # Utility functions
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🚀 Tecnologias Utilizadas
 
